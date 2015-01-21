@@ -12,7 +12,11 @@
 
 @end
 
+
 @implementation VOSDefinitionViewController
+
+// @synthesize wordPass;
+
 
 -(id) initWithModel:(NSString *) model{
     if (self = [super init]){
@@ -23,15 +27,42 @@
     return self;
 }
 
+#pragma mark - UIWebViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.browser loadRequest:[self definitionRequestForWord:[self wordPass]]];
+
+}
+
+-(void) webViewDidFinishLoad:(UIWebView *) webView{
+    [self.activityView stopAnimating];
+    [self.activityView setHidden:YES];
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) viewWillAppear:(BOOL)animated{      // aqui ya existe la vista y tiene tamaño correcto
+    [super viewWillAppear:animated];
+    
+    // Asignamos el delegado
+    self.browser.delegate = self;
+    
+    [self.activityView startAnimating];
+    [self.activityView setHidden:NO];
+    
+}
+
+-(NSURLRequest *) definitionRequestForWord: (NSString *) aWord{
+    NSURL *url = [NSURL URLWithString:
+                  [NSString stringWithFormat:@"http://www.merriam-webster.com/dictionary/%@", aWord]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    return request;
 }
 
 #pragma mark - splitViewControllerDelegate
@@ -53,8 +84,13 @@
 #pragma mark - wordsTableViewControllerDelegate
 -(void) wordsTableViewController:(VOSWordsTableViewController *) dictVC didSelectWord:(NSString *) aWord{
     self.wordPass = aWord;
-    self.wordReceived.text = aWord;
-    self.title = aWord;
+    self.title = self.wordPass;  // aWord;
+
+    [self.activityView startAnimating];
+    [self.activityView setHidden:NO];
+
+    [self.browser loadRequest:[self definitionRequestForWord:self.wordPass ]];
+
     
 }
 /*

@@ -19,18 +19,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // Conversión de tipos
-    UISplitViewController * splitVC = (UISplitViewController *) self.window.rootViewController;
-    UINavigationController * navVC = [splitVC.viewControllers lastObject];
+    if ([[UIDevice currentDevice] userInterfaceIdiom ] == UIUserInterfaceIdiomPad){
+        // tableta
+        
+        // Localización de los controladores que vamos a poner como delegados
+        UISplitViewController * splitVC = (UISplitViewController *) self.window.rootViewController;
+        UINavigationController * navVC = [splitVC.viewControllers lastObject];
+        
+        // Asignamos los delegados
+        splitVC.delegate = (id)[navVC topViewController];
+        
+        UINavigationController * navTableVC = [splitVC.viewControllers firstObject];
+        VOSWordsTableViewController * tabVC = (id)[navTableVC topViewController];
+        tabVC.delegate = (id)[navVC topViewController];
 
-    // Asignamos los delegados
-    splitVC.delegate = (id)[navVC topViewController];
-    
-    UINavigationController * navTableVC = [splitVC.viewControllers firstObject];
-    VOSWordsTableViewController * tabVC = (id)[navTableVC topViewController];
-    tabVC.delegate = (id)[navVC topViewController];
+    }
+
 
     return YES;
+}
+
+#pragma mark - Configuration
+-(void)configureForPad{
+
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

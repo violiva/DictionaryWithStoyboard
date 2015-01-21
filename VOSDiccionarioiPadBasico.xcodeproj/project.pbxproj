@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADA4949D1A6FE4520011ACE6 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA4949C1A6FE4520011ACE6 /* iPhoneStoryboard.storyboard */; };
 		ADC89BCB1A6E72C900F598B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BCA1A6E72C900F598B6 /* main.m */; };
 		ADC89BCE1A6E72C900F598B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BCD1A6E72C900F598B6 /* AppDelegate.m */; };
 		ADC89BD61A6E72C900F598B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC89BD51A6E72C900F598B6 /* Images.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ADA4949C1A6FE4520011ACE6 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		ADC89BC51A6E72C900F598B6 /* VOSDiccionarioiPadBasico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOSDiccionarioiPadBasico.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC89BC91A6E72C900F598B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC89BCA1A6E72C900F598B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				ADC89BCC1A6E72C900F598B6 /* AppDelegate.h */,
 				ADC89BCD1A6E72C900F598B6 /* AppDelegate.m */,
 				ADC89BEE1A6E72EA00F598B6 /* Main.storyboard */,
+				ADA4949C1A6FE4520011ACE6 /* iPhoneStoryboard.storyboard */,
 				ADC89BD51A6E72C900F598B6 /* Images.xcassets */,
 				ADC89BD71A6E72C900F598B6 /* LaunchScreen.xib */,
 				ADC89C001A6E747F00F598B6 /* Resource */,
@@ -238,6 +241,7 @@
 			files = (
 				ADC89BEF1A6E72EA00F598B6 /* Main.storyboard in Resources */,
 				ADC89BD91A6E72C900F598B6 /* LaunchScreen.xib in Resources */,
+				ADA4949D1A6FE4520011ACE6 /* iPhoneStoryboard.storyboard in Resources */,
 				ADC89BFF1A6E747700F598B6 /* vocabwords.txt in Resources */,
 				ADC89BD61A6E72C900F598B6 /* Images.xcassets in Resources */,
 			);
@@ -380,6 +384,7 @@
 				INFOPLIST_FILE = VOSDiccionarioiPadBasico/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -390,6 +395,7 @@
 				INFOPLIST_FILE = VOSDiccionarioiPadBasico/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -446,6 +452,7 @@
 				ADC89BEA1A6E72C900F598B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADC89BEB1A6E72C900F598B6 /* Build configuration list for PBXNativeTarget "VOSDiccionarioiPadBasicoTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +461,7 @@
 				ADC89BED1A6E72C900F598B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

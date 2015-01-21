@@ -6,14 +6,16 @@
 //  Copyright (c) 2015 Vicente Oliva de la Serna. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class UIKit;
 #import "VOSWordsTableViewController.h"
 
-@interface VOSDefinitionViewController : UIViewController <UISplitViewControllerDelegate, wordsTableViewControllerDelegate>
+@interface VOSDefinitionViewController : UIViewController <UISplitViewControllerDelegate, wordsTableViewControllerDelegate, UIWebViewDelegate>
 
-@property (strong, nonatomic) NSString * wordPass;
+@property (copy, nonatomic) NSString * wordPass;
+@property (weak, nonatomic) IBOutlet UIWebView * browser;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityView;
 
-@property (weak, nonatomic) IBOutlet UILabel * wordReceived;
+-(NSURLRequest *) definitionRequestForWord: (NSString *) aWord;
 
 
 -(id) initWithModel:(NSString *) model;

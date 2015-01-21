@@ -10,20 +10,29 @@
 #import "VOSDefinitionViewController.h"
 #import "VOSWordsModel.h"
 
+////------------------------------------------------------------------------
+//// segunda opcion para implementar aquí en lugar de en el appdelegate.
+////------------------------------------------------------------------------
+// @interface VOSDefinitionViewController()
+// @property (strong, nonatomic) VOSDefinitionViewController * definitionViewController;
+// @end
+////-------------------------------------------------------------------------
+
 
 @implementation VOSWordsTableViewController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     _model = [[VOSWordsModel alloc] init];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //--------------------------------------------------------------------------
+    //// segunda opcion para implementar aquí en lugar de en el appdelegate.
+    //--------------------------------------------------------------------------
+//    self.definitionViewController = [(VOSDefinitionViewController *)[self.splitViewController.viewControllers lastObject] topViewController];
+//    self.delegate = self.definitionViewController;
+    //---------------------------
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +85,7 @@
     NSString * letter = [[self.model letters] objectAtIndex:indexPath.section];
     NSString * word = [self.model wordThatStartWithLetter:letter atIndex:indexPath.row];
     
-    [self.delegate wordsTableViewController:self
+    [self.delegate wordsTableViewController:self     
                               didSelectWord:word];
 }
 
@@ -115,16 +124,28 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
+    if ( [segue.identifier isEqualToString:@"showDefinition"]){
+        
+        NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
+        
+        // localizamos la palabra a buscar su definición en la web
+        NSString * letter = [[self.model letters] objectAtIndex:indexPath.section];
+        NSString * word = [self.model wordThatStartWithLetter:letter atIndex:indexPath.row];
+
+        // identificamos el ViewControler al que se realizará la transición
+        VOSDefinitionViewController * destVC = segue.destinationViewController;
+        
+        // asignamos valores a destino
+        destVC.wordPass = word;
+        
+    }
  
-    
-    // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

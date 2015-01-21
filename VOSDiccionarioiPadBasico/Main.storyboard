@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jrb-fb-tFx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Jrb-fb-tFx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -8,38 +8,39 @@
         <scene sceneID="mKp-s4-gCl">
             <objects>
                 <viewController id="m3d-35-OAE" customClass="VOSDefinitionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uu7-Gx-cGH"/>
-                        <viewControllerLayoutGuide type="bottom" id="Kvd-kc-dp5"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dPe-yr-8W9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-Rg-uEz">
-                                <rect key="frame" x="245" y="289" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="fss-6q-zlT">
+                                <rect key="frame" x="366" y="493" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <webView contentMode="scaleToFill" id="WsX-il-PN5">
+                                <rect key="frame" x="0.0" y="64" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KkH-Ev-jib"/>
                     <connections>
-                        <outlet property="wordReceived" destination="ZvO-Rg-uEz" id="43x-8H-P8Z"/>
+                        <outlet property="activityView" destination="fss-6q-zlT" id="Qh7-1a-h3r"/>
+                        <outlet property="browser" destination="WsX-il-PN5" id="WZw-rc-Nyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWp-g8-u1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="871"/>
+            <point key="canvasLocation" x="1890" y="1486"/>
         </scene>
         <!--Dictionary-->
         <scene sceneID="Ers-rL-zbH">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="yqd-cy-oNe" customClass="VOSWordsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cRZ-GG-gDs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="308" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -59,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nG5-6x-Zv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485" y="201"/>
+            <point key="canvasLocation" x="1900.8" y="343.04000000000002"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wae-eN-ueB">
@@ -75,7 +76,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnN-sU-ObQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="209"/>
+            <point key="canvasLocation" x="851.20000000000005" y="356.69333333333333"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="h9e-JF-N76">
@@ -88,7 +89,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohk-76-Chj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-155" y="540"/>
+            <point key="canvasLocation" x="-198.40000000000001" y="921.60000000000002"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hy3-mG-RaY">
@@ -106,7 +107,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rya-p9-PRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="871"/>
+            <point key="canvasLocation" x="851.20000000000005" y="1486.5066666666667"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>
