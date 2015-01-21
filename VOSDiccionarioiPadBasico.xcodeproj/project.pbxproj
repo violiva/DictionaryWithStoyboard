@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		ADC89BCB1A6E72C900F598B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BCA1A6E72C900F598B6 /* main.m */; };
 		ADC89BCE1A6E72C900F598B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BCD1A6E72C900F598B6 /* AppDelegate.m */; };
-		ADC89BD11A6E72C900F598B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BD01A6E72C900F598B6 /* ViewController.m */; };
-		ADC89BD41A6E72C900F598B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC89BD21A6E72C900F598B6 /* Main.storyboard */; };
 		ADC89BD61A6E72C900F598B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC89BD51A6E72C900F598B6 /* Images.xcassets */; };
 		ADC89BD91A6E72C900F598B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC89BD71A6E72C900F598B6 /* LaunchScreen.xib */; };
 		ADC89BE51A6E72C900F598B6 /* VOSDiccionarioiPadBasicoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BE41A6E72C900F598B6 /* VOSDiccionarioiPadBasicoTests.m */; };
+		ADC89BEF1A6E72EA00F598B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC89BEE1A6E72EA00F598B6 /* Main.storyboard */; };
+		ADC89BF21A6E732B00F598B6 /* VOSWordsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BF11A6E732B00F598B6 /* VOSWordsTableViewController.m */; };
+		ADC89BF91A6E738900F598B6 /* VOSDefinitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BF81A6E738900F598B6 /* VOSDefinitionViewController.m */; };
+		ADC89BFC1A6E743200F598B6 /* VOSWordsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC89BFB1A6E743200F598B6 /* VOSWordsModel.m */; };
+		ADC89BFF1A6E747700F598B6 /* vocabwords.txt in Resources */ = {isa = PBXBuildFile; fileRef = ADC89BFE1A6E747700F598B6 /* vocabwords.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,19 @@
 		ADC89BCA1A6E72C900F598B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADC89BCC1A6E72C900F598B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ADC89BCD1A6E72C900F598B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ADC89BCF1A6E72C900F598B6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		ADC89BD01A6E72C900F598B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		ADC89BD31A6E72C900F598B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADC89BD51A6E72C900F598B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ADC89BD81A6E72C900F598B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ADC89BDE1A6E72C900F598B6 /* VOSDiccionarioiPadBasicoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VOSDiccionarioiPadBasicoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC89BE31A6E72C900F598B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC89BE41A6E72C900F598B6 /* VOSDiccionarioiPadBasicoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VOSDiccionarioiPadBasicoTests.m; sourceTree = "<group>"; };
+		ADC89BEE1A6E72EA00F598B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		ADC89BF01A6E732B00F598B6 /* VOSWordsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSWordsTableViewController.h; sourceTree = "<group>"; };
+		ADC89BF11A6E732B00F598B6 /* VOSWordsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSWordsTableViewController.m; sourceTree = "<group>"; };
+		ADC89BF71A6E738900F598B6 /* VOSDefinitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSDefinitionViewController.h; sourceTree = "<group>"; };
+		ADC89BF81A6E738900F598B6 /* VOSDefinitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSDefinitionViewController.m; sourceTree = "<group>"; };
+		ADC89BFA1A6E743200F598B6 /* VOSWordsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSWordsModel.h; sourceTree = "<group>"; };
+		ADC89BFB1A6E743200F598B6 /* VOSWordsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSWordsModel.m; sourceTree = "<group>"; };
+		ADC89BFE1A6E747700F598B6 /* vocabwords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vocabwords.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +91,13 @@
 			children = (
 				ADC89BCC1A6E72C900F598B6 /* AppDelegate.h */,
 				ADC89BCD1A6E72C900F598B6 /* AppDelegate.m */,
-				ADC89BCF1A6E72C900F598B6 /* ViewController.h */,
-				ADC89BD01A6E72C900F598B6 /* ViewController.m */,
-				ADC89BD21A6E72C900F598B6 /* Main.storyboard */,
+				ADC89BEE1A6E72EA00F598B6 /* Main.storyboard */,
 				ADC89BD51A6E72C900F598B6 /* Images.xcassets */,
 				ADC89BD71A6E72C900F598B6 /* LaunchScreen.xib */,
+				ADC89C001A6E747F00F598B6 /* Resource */,
 				ADC89BC81A6E72C900F598B6 /* Supporting Files */,
+				ADC89BF31A6E733000F598B6 /* Controllers */,
+				ADC89BFD1A6E743900F598B6 /* Models */,
 			);
 			path = VOSDiccionarioiPadBasico;
 			sourceTree = "<group>";
@@ -117,6 +126,34 @@
 				ADC89BE31A6E72C900F598B6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADC89BF31A6E733000F598B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ADC89BF01A6E732B00F598B6 /* VOSWordsTableViewController.h */,
+				ADC89BF11A6E732B00F598B6 /* VOSWordsTableViewController.m */,
+				ADC89BF71A6E738900F598B6 /* VOSDefinitionViewController.h */,
+				ADC89BF81A6E738900F598B6 /* VOSDefinitionViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		ADC89BFD1A6E743900F598B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ADC89BFA1A6E743200F598B6 /* VOSWordsModel.h */,
+				ADC89BFB1A6E743200F598B6 /* VOSWordsModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		ADC89C001A6E747F00F598B6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				ADC89BFE1A6E747700F598B6 /* vocabwords.txt */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +236,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADC89BD41A6E72C900F598B6 /* Main.storyboard in Resources */,
+				ADC89BEF1A6E72EA00F598B6 /* Main.storyboard in Resources */,
 				ADC89BD91A6E72C900F598B6 /* LaunchScreen.xib in Resources */,
+				ADC89BFF1A6E747700F598B6 /* vocabwords.txt in Resources */,
 				ADC89BD61A6E72C900F598B6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADC89BD11A6E72C900F598B6 /* ViewController.m in Sources */,
+				ADC89BF91A6E738900F598B6 /* VOSDefinitionViewController.m in Sources */,
 				ADC89BCE1A6E72C900F598B6 /* AppDelegate.m in Sources */,
+				ADC89BFC1A6E743200F598B6 /* VOSWordsModel.m in Sources */,
 				ADC89BCB1A6E72C900F598B6 /* main.m in Sources */,
+				ADC89BF21A6E732B00F598B6 /* VOSWordsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +284,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ADC89BD21A6E72C900F598B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADC89BD31A6E72C900F598B6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ADC89BD71A6E72C900F598B6 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VOSWordsTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Conversión de tipos
+    UISplitViewController * splitVC = (UISplitViewController *) self.window.rootViewController;
+    UINavigationController * navVC = [splitVC.viewControllers lastObject];
+
+    // Asignamos los delegados
+    splitVC.delegate = (id)[navVC topViewController];
+    
+    UINavigationController * navTableVC = [splitVC.viewControllers firstObject];
+    VOSWordsTableViewController * tabVC = (id)[navTableVC topViewController];
+    tabVC.delegate = (id)[navVC topViewController];
+
     return YES;
 }
 
