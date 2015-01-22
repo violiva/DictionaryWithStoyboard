@@ -10,6 +10,9 @@
 @class VOSWordsModel;
 @class VOSWordsTableViewController;
 
+#define SECTION_KEY @"section"
+#define ROW_KEY @"row"
+#define LAST_WORD_KEY @"lastword"
 
 @protocol wordsTableViewControllerDelegate <NSObject>
 

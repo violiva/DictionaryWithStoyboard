@@ -33,6 +33,18 @@
 //    self.delegate = self.definitionViewController;
     //---------------------------
     
+    // buscamos la palabra con la que queremos arrancar la primera vez
+//    NSString * word = [_model wordAtIndex:0 inLetterAtIndex:1];
+    NSIndexPath * indexPath = [self coordslastSelectedWord];
+    NSString * word = [self.model wordAtIndex:indexPath.row
+                              inLetterAtIndex:indexPath.section];
+  
+    
+    // pasamos la palabra al delegado
+    [self.delegate wordsTableViewController:self didSelectWord:word];
+    
+   
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,9 +97,79 @@
     
     NSString * word = [self.model wordAtIndex:indexPath.row inLetterAtIndex:indexPath.section];
 
+    // Guardamos la palabra seleccionada para que cuando arranque la próxima vez la aplicación comience con la última palabra seleccionada.
+    
+
+    [self saveLastSelectedWordAtSection:indexPath.section
+                                    row:indexPath.row];
+
     [self.delegate wordsTableViewController:self
                               didSelectWord:word];
+    
 }
+
+
+#pragma mark -  NSUserDefaults
+-(NSIndexPath *)coordslastSelectedWord{
+    NSDictionary * coords = nil;
+    
+    coords = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_WORD_KEY];
+    if (coords == nil){
+        coords = [self setDefaults];
+    }
+    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:[[coords objectForKey:@"row"] integerValue]
+                                                 inSection:[[coords objectForKey:@"section"] integerValue]];
+    
+    return indexPath;
+}
+
+-(NSDictionary *)setDefaults{
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary * defaultWordCoords = @{SECTION_KEY:@0, ROW_KEY:@0};
+    
+    [defaults setObject:defaultWordCoords
+                 forKey:LAST_WORD_KEY];
+    
+    return defaultWordCoords;
+    
+}
+
+
+- (void)saveLastSelectedWordAtSection:(NSUInteger)section row:(NSUInteger)row{
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@{SECTION_KEY : @(section),
+                          ROW_KEY     : @(row)}
+                 forKey:LAST_WORD_KEY];
+    
+    [defaults synchronize]; // Por si acaso, que Murphy acecha.
+}
+
+- (NSString *)lastSelectedWord
+{
+    NSIndexPath *indexPath = nil;
+    NSDictionary *coords = nil;
+    
+    coords = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_WORD_KEY];
+    
+    if (coords == nil) {
+        // No hay nada bajo la clave LAST_WORD_KEY.
+        // Esto quiere decir que es la primera vez que se llama a la App
+        // Ponemos un valor por defecto: la primera palabra de la primera sección ( letra A )
+        coords = [self setDefaults];
+    }else{
+        // Ya hay algo, es decir, en algún momento se guardó.
+        // No hay nada en especial que hacer.
+    }
+    
+    // Transformamos esas coordenadas en un indexpath
+    indexPath = [NSIndexPath indexPathForRow:[[coords objectForKey: ROW_KEY] integerValue]
+                                   inSection:[[coords objectForKey: SECTION_KEY] integerValue]];
+    
+    // devolvemos la palabra en cuestión
+    return [self.model wordAtIndex:indexPath.row inLetterAtIndex:indexPath.section ];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
