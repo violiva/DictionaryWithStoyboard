@@ -69,8 +69,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:@"Cell"];
     }
-    NSString * letter = [[self.model letters] objectAtIndex:indexPath.section];
-    NSString * word = [self.model wordThatStartWithLetter:letter atIndex:indexPath.row];
+    
+    NSString * word = [self.model wordAtIndex:indexPath.row inLetterAtIndex:indexPath.section];
 
     cell.textLabel.text = word;
     return cell;
@@ -82,13 +82,12 @@
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString * letter = [[self.model letters] objectAtIndex:indexPath.section];
-    NSString * word = [self.model wordThatStartWithLetter:letter atIndex:indexPath.row];
     
-    [self.delegate wordsTableViewController:self     
+    NSString * word = [self.model wordAtIndex:indexPath.row inLetterAtIndex:indexPath.section];
+
+    [self.delegate wordsTableViewController:self
                               didSelectWord:word];
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -127,15 +126,14 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+-(void)prepareForSegue:(UIStoryboardSegue *) segue sender:(id) sender {
     // Get the new view controller using [segue destinationViewController].
     if ( [segue.identifier isEqualToString:@"showDefinition"]){
         
         NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
         
         // localizamos la palabra a buscar su definición en la web
-        NSString * letter = [[self.model letters] objectAtIndex:indexPath.section];
-        NSString * word = [self.model wordThatStartWithLetter:letter atIndex:indexPath.row];
+        NSString * word = [self.model wordAtIndex:indexPath.row inLetterAtIndex:indexPath.section];
 
         // identificamos el ViewControler al que se realizará la transición
         VOSDefinitionViewController * destVC = segue.destinationViewController;
@@ -146,6 +144,5 @@
     }
  
 }
-
 
 @end

@@ -46,4 +46,12 @@
     
 }
 
+-(NSString *) wordAtIndex:(NSInteger) aWordIndex
+          inLetterAtIndex:(NSInteger) aLetterIndex{
+    
+    NSString * letter = [self letterAtIndex:aLetterIndex];
+    NSArray * wordsThatStartWithLetter = [self.words objectForKey:letter];
+    return [wordsThatStartWithLetter objectAtIndex:aWordIndex];
+}
+
 @end

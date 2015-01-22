@@ -13,13 +13,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="sQo-l8-MLx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="yLu-UH-cts" style="IBUITableViewCellStyleDefault" id="sQo-l8-MLx">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQo-l8-MLx" id="ZU8-yT-2tM">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yLu-UH-cts">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="SzI-zV-sFe" kind="push" identifier="showDefinition" id="t8D-6r-IEV"/>
+                                    <segue destination="u5V-MC-4Jz" kind="push" identifier="showDefinition" id="FvQ-1s-leA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -35,19 +43,19 @@
             <point key="canvasLocation" x="771" y="-147"/>
         </scene>
         <!--Definition View Controller-->
-        <scene sceneID="EVe-FE-YUe">
+        <scene sceneID="sso-Ff-VKg">
             <objects>
-                <viewController id="SzI-zV-sFe" customClass="VOSDefinitionViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="z4g-4J-PFc">
+                <viewController id="u5V-MC-4Jz" customClass="VOSDefinitionViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bvc-ye-Xyl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" id="uNE-Xf-hr9">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <webView contentMode="scaleToFill" id="PEh-rf-BB5">
+                                <rect key="frame" x="0.0" y="61" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
-                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="LrE-nB-R3O">
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="0Pc-ZK-6tZ">
                                 <rect key="frame" x="142" y="265" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,15 +63,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hTn-hH-057"/>
+                    <navigationItem key="navigationItem" id="aJ7-V5-zsC"/>
                     <connections>
-                        <outlet property="activityView" destination="LrE-nB-R3O" id="2k9-Qp-ZJm"/>
-                        <outlet property="browse" destination="uNE-Xf-hr9" id="Vuy-Hx-w1v"/>
+                        <outlet property="activityView" destination="0Pc-ZK-6tZ" id="6mA-FA-90T"/>
+                        <outlet property="browser" destination="PEh-rf-BB5" id="nCf-mC-au3"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a8o-jB-bYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlo-de-mfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="-146"/>
+            <point key="canvasLocation" x="1216" y="-144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b6K-YG-Zeu">

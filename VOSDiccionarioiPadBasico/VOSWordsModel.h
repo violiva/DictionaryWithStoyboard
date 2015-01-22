@@ -18,6 +18,8 @@
 
 -(NSArray *) wordsThatStartWithLetter:(NSString *) aLetter;
 -(NSString *) wordThatStartWithLetter:(NSString *) aLetter atIndex:(NSUInteger) anIndex;
+-(NSString *) wordAtIndex:(NSInteger) aWordIndex
+          inLetterAtIndex:(NSInteger) aLetterIndex;
 
 
 @end
